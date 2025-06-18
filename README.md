@@ -84,14 +84,6 @@ ORDER BY 2 DESC;
 
 ---
 
-## 🚀 Getting Started
-
-1. Clone this repo.
-2. Load the layoffs.csv dataset into your SQL environment.
-3. Run the provided SQL queries to reproduce the analysis or adapt them for deeper exploration.
-
----
-
 ## 🤝 Contributions
 
 Feel free to fork, open issues, or submit pull requests with new queries, visualizations, or insights!
