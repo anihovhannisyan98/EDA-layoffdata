@@ -41,28 +41,6 @@ This project performs an in-depth exploratory data analysis (EDA) on a comprehen
 - Time Range: 4+ years of data
 - Geographic Coverage: Global scope with focus on tech hubs
 
-### 🎨 Analysis Structure
-graph TD
-    A[Raw Data] --> B[Basic Exploration]
-    B --> C[Data Quality Assessment]
-    C --> D[Intermediate Analysis]
-    D --> E[Advanced Queries]
-    E --> F[Key Insights]
-    
-    B --> B1[Min/Max Values]
-    B --> B2[Percentage Analysis]
-    B --> B3[Outlier Detection]
-    
-    D --> D1[Company Rankings]
-    D --> D2[Geographic Analysis]
-    D --> D3[Industry Breakdown]
-    D --> D4[Temporal Trends]
-    
-    E --> E1[Year-over-Year Rankings]
-    E --> E2[Rolling Calculations]
-    E --> E3[Time Series Analysis]
-
------
 
 ## 🚀 Quick Start
 
