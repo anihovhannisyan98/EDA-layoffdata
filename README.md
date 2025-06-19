@@ -1,105 +1,89 @@
-# World Layoffs EDA Project
+# 🧠 Layoffs Analysis Project (SQL)
 
-Welcome to the World Layoffs EDA project! This repository contains SQL queries, analysis, and insights from exploratory data analysis (EDA) performed on a global layoffs dataset. The goal is to uncover trends, patterns, and outliers in recent layoff events across companies, industries, and countries.
+This project showcases my data analysis skills using real-world layoff data. It includes both data cleaning and exploratory data analysis (EDA) performed in MySQL. The goal is to transform raw data into a structured, insightful format that supports further reporting or visualization.
 
----
-
-## 📊 Project Overview
-
-This project explores a dataset of company layoffs, including details such as:
-
-- Company name
-- Location and country
-- Industry
-- Number and percentage of employees laid off
-- Date of layoff
-- Company stage (e.g., Post-IPO, Series B)
-- Funds raised
-
-The EDA process is designed to answer key questions, spot trends, and highlight notable events, such as companies that laid off their entire workforce, the largest single-day layoffs, and industry or country-level impacts.
+Inspired by Alex The Analyst's YouTube SQL Portfolio Series, this project serves as part of my data analytics learning journey and portfolio.
 
 ---
 
-## 🗂️ Dataset
+## 📁 Project Structure
 
-- Source: layoffs.csv
-- Columns: company, location, industry, total_laid_off, percentage_laid_off, date, stage, country, funds_raised_millions
-- Sample Data:
-
-| company    | location        | industry     | total_laid_off | percentage_laid_off | date      | stage     | country      | funds_raised_millions |
-|------------|----------------|--------------|----------------|---------------------|-----------|-----------|--------------|-----------------------|
-| Atlassian  | Sydney         | Other        | 500            | 0.05                | 3/6/2023  | Post-IPO  | Australia    | 210                   |
-| SiriusXM   | New York City  | Media        | 475            | 0.08                | 3/6/2023  | Post-IPO  | United States| 525                   |
+- layoffs.csv – Raw dataset used for this project
+- data_cleaning.sql – SQL script for cleaning and preparing the data
+- eda.sql – SQL script for exploratory data analysis and insights
 
 ---
 
-## 🔍 EDA Highlights
+## 🎯 Objectives
 
-### Simple Exploration
-
-- Max Layoffs: Find the largest single layoff event.
-- Layoff Percentage: Identify companies that laid off 100% of their staff (often startups that shut down).
-- Funds Raised: See which failed companies had raised the most capital.
-
-### Aggregate Analysis
-
-- Top Companies: Companies with the most total layoffs (single event and cumulative).
-- By Location/Country: Cities and countries with the highest layoffs.
-- By Year: Layoff trends over time.
-- By Industry/Stage: Which sectors and company stages were most affected.
-
-### Advanced Analysis
-
-- Top Companies per Year: Using window functions to rank companies by layoffs each year.
-- Rolling Layoffs: Calculate rolling monthly totals to visualize layoff waves.
+- Clean a messy real-world dataset using SQL
+- Explore the dataset through SQL queries
+- Discover trends, patterns, and outliers
+- Practice professional SQL workflow for data projects
 
 ---
 
-## 🧑‍💻 Example SQL Queries
-SQL
+## 🗃️ Dataset Overview
 
--- Largest single layoff event
-SELECT MAX(total_laid_off)
-FROM world_layoffs.layoffs_staging2;
+The dataset includes global tech company layoffs with the following columns:
 
--- Companies that laid off 100% of their staff
-SELECT *
-FROM world_layoffs.layoffs_staging2
-WHERE percentage_laid_off = 1
-ORDER BY funds_raised_millions DESC;
+- company
+- location, country, continent
+- industry, stage, funds_raised_millions
+- total_laid_off, percentage_laid_off
+- date, latitude, longitude
 
--- Total layoffs by industry
-SELECT industry, SUM(total_laid_off)
-FROM world_layoffs.layoffs_staging2
-GROUP BY industry
-ORDER BY 2 DESC;
----
-
-## 📈 Insights & Observations
-
-- Several startups laid off their entire workforce, often after raising significant venture capital.
-- The largest layoffs were concentrated in tech, finance, and media sectors.
-- Layoff waves often corresponded with global economic events and funding slowdowns.
-- Some well-funded companies (e.g., Quibi) still failed, illustrating that high capital does not guarantee survival.
+> File: layoffs.csv
 
 ---
 
-## 🤝 Contributions
+## 🔧 Tools Used
 
-Feel free to fork, open issues, or submit pull requests with new queries, visualizations, or insights!
-
----
-
-## 📄 License
-
-This project is open-source and free to use under the MIT License.
+- MySQL Workbench
+- SQL (MySQL syntax)
+- CSV file import
 
 ---
 
-## 📬 Contact
+## 🧹 Data Cleaning Steps
 
-For questions or collaboration, please open an issue or reach out via GitHub.
+- Removed duplicate records
+- Replaced or flagged NULL values
+- Trimmed whitespace and standardized casing
+- Formatted date columns
+- Created derived columns (e.g., year, month)
+- Standardized categorical values like countries and stages
+
+> See full script: data_cleaning.sql
 
 ---
 
-Happy exploring!
+## 📊 Exploratory Data Analysis (EDA)
+
+Using cleaned data, I explored key patterns and trends:
+
+### Example Insights:
+- 📈 Top companies by number of layoffs
+- 🌎 Countries and continents with the highest layoffs
+- 🏭 Industries most affected
+- 🗓️ Monthly and yearly trends
+- ⚠️ Companies that laid off 100% of their workforce
+
+> See full script: eda.sql
+
+---
+
+## 📌 Skills Demonstrated
+
+- SQL querying and data manipulation
+- Data cleaning best practices
+- Aggregation, filtering, and grouping
+- Trend and outlier identification using SQL only
+- Portfolio project structuring
+
+---
+
+## 🙋 About Me
+
+I’m an aspiring data analyst building hands-on skills through real datasets and portfolio projects.  
+Feel free to explore my work and connect for feedback or collaboration!
